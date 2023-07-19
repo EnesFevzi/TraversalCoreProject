@@ -6,7 +6,7 @@ Proje Hakkında
 Bu proje, tatil rezervasyonu alanında faaliyet gösteren bir web sitesini temsil etmektedir. Sitede, çeşitli tatil seçeneklerinin listelendiği, kullanıcıların kişisel hesabına ve siteye ait bilgilere erişebildiği ve admin kullanıcısının da site içerisinde CRUD işlemleri gerçekleştirebildiği üç farklı tasarıma sahip bir projedir.
 
 ## Teknolojiler ve Katmanlar
--ASP.NET Core 5.0
+-ASP.NET Core 6.0
 -Entity Framework Core
 -SQL Server
 -N Tier Architecture
