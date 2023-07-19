@@ -1,11 +1,11 @@
-# TraversalProject
+## TraversalProject
 
 Traversal Rezervasyon Asp.Net Core 6.0 Proje
 
 Proje Hakkında
 Bu proje, tatil rezervasyonu alanında faaliyet gösteren bir web sitesini temsil etmektedir. Sitede, çeşitli tatil seçeneklerinin listelendiği, kullanıcıların kişisel hesabına ve siteye ait bilgilere erişebildiği ve admin kullanıcısının da site içerisinde CRUD işlemleri gerçekleştirebildiği üç farklı tasarıma sahip bir projedir.
 
-# Teknolojiler ve Katmanlar
+## Teknolojiler ve Katmanlar
 -ASP.NET Core 5.0
 -Entity Framework Core
 -SQL Server
@@ -19,7 +19,7 @@ Bu proje, tatil rezervasyonu alanında faaliyet gösteren bir web sitesini temsi
 -SignalRConsume
 
 
-# Proje Geliştirme Aşamaları
+## Proje Geliştirme Aşamaları
 Katmanlar oluşturuldu ve projenin genel yapısı belirlendi.
 
 Proje geliştirme aşamaları için katmanlar oluşturuldu.
