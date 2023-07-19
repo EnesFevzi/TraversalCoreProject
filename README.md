@@ -12,6 +12,10 @@ Bu proje, tatil rezervasyonu alanında faaliyet gösteren bir web sitesini temsi
 - HTML, CSS, Bootstrap
 - SQL Server
 - RapidAPI ve ApiConsume (API entegrasyonu için kullanıldı)
+- DTOLayer
+- EntityLayer
+- SignalRApiForSQL
+- SignalRConsume
 
 ## Kurulum ve Çalıştırma
 
