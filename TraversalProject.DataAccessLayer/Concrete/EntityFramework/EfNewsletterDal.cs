@@ -9,9 +9,9 @@ using TraversalProject.EntityLayer.Concrete;
 
 namespace TraversalProject.DataAccessLayer.Concrete.EntityFramework
 {
-    public class EfNewsletterDal : GenericRepository<Newsletter>, INewsLetterDal
+    public class EfNewsLetterDal : GenericRepository<Newsletter>, INewsLetterDal
     {
-        public EfNewsletterDal(TContext context) : base(context)
+        public EfNewsLetterDal(TContext context) : base(context)
         {
         }
     }
