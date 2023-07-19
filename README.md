@@ -5,18 +5,21 @@ Traversal Rezervasyon Asp.Net Core 6.0 Proje
 Proje Hakkında
 Bu proje, tatil rezervasyonu alanında faaliyet gösteren bir web sitesini temsil etmektedir. Sitede, çeşitli tatil seçeneklerinin listelendiği, kullanıcıların kişisel hesabına ve siteye ait bilgilere erişebildiği ve admin kullanıcısının da site içerisinde CRUD işlemleri gerçekleştirebildiği üç farklı tasarıma sahip bir projedir.
 
-## Teknolojiler ve Katmanlar
--ASP.NET Core 6.0
--Entity Framework Core
--SQL Server
--N Tier Architecture
--PresentationLayer
--BusinessLayer
--DataAccessLayer
--DTOLayer
--EntityLayer
--SignalRApiForSQL
--SignalRConsume
+## Teknolojiler ve Araçlar
+
+- ASP.NET Core 6.0
+- Entity Framework Core
+- HTML, CSS, Bootstrap
+- SQL Server
+- RapidAPI ve ApiConsume (API entegrasyonu için kullanıldı)
+
+## Kurulum ve Çalıştırma
+
+1. Depoyu bilgisayarınıza klonlayın.
+2. SQL Server üzerinde bir veritabanı oluşturun.
+3. appsettings.json dosyasında veritabanı bağlantı dizesini güncelleyin.
+4. `dotnet ef database update` komutunu çalıştırarak veritabanı tablolarını oluşturun.
+5. Projeyi çalıştırın ve web uygulamasını tarayıcınızda görüntüleyin.
 
 
 ## Proje Geliştirme Aşamaları
