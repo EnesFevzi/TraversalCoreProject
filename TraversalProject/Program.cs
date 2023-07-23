@@ -5,18 +5,20 @@ using TraversalProject.DataAccessLayer.Concrete;
 using TraversalProject.DataAccessLayer.Extensions;
 using TraversalProject.EntityLayer.Concrete;
 using TraversalProject.Extensions;
+using static Org.BouncyCastle.Math.EC.ECCurve;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<DbContext>();
+//builder.Services.AddDbContext<TContext>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<TContext>().AddDefaultTokenProviders();
+
 
 //builder.Services.AddFluentValidationAutoValidation();
 //builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddHttpClient();
 builder.Services.AddAuthorization();
-builder.Services.LoadDataLayerExtension();
+builder.Services.LoadDataLayerExtension(builder.Configuration);
 builder.Services.LoadServiceLayerExtension();
 builder.Services.LoadWebUILayerExtension();
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
