@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using TraversalProject.DataAccessLayer.Abstract;
@@ -10,7 +11,7 @@ namespace TraversalProject.DataAccessLayer.Repository
 {
     public class GenericRepository<T> : IGenericDal<T> where T : class
     {
-        private readonly TContext _context;
+        protected readonly TContext _context;
 
         public GenericRepository(TContext context)
         {
@@ -27,6 +28,16 @@ namespace TraversalProject.DataAccessLayer.Repository
         {
             _context.Remove(t);
             _context.SaveChanges();
+        }
+
+        public List<T> GetByFilter(Expression<Func<T, bool>> filter)
+        {
+            return _context.Set<T>().Where(filter).ToList();
+        }
+
+        public T GetByFilter2(Expression<Func<T, bool>> filter)
+        {
+            return _context.Set<T>().FirstOrDefault(filter);
         }
 
         public T GetByID(int id)

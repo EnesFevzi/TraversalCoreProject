@@ -3,6 +3,7 @@ using TraversalProject.EntityLayer.Concrete;
 using TraversalProject.DtoLayer.Dtos.DestinationDto;
 using TraversalProject.DtoLayer.Dtos.SubAutoDto;
 using TraversalProject.DtoLayer.Dtos.TestimonialDto;
+using TraversalProject.DtoLayer.Dtos.CommentDto;
 
 namespace TraversalProject.WebUI.Mapping
 {
@@ -19,6 +20,8 @@ namespace TraversalProject.WebUI.Mapping
             CreateMap<ListTestimonialDto, Testimonial>().ReverseMap();
             CreateMap<Testimonial, ListTestimonialDto>().ReverseMap();
 
+            CreateMap<ListCommentDto, Comment>().ReverseMap();
+            CreateMap<Comment, ListCommentDto>().ReverseMap();
 
             //CreateMap<UpdateServiceDto, Service>().ReverseMap();
             //CreateMap<CreateServiceDto, Service>().ReverseMap();

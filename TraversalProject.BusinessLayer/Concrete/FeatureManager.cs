@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using TraversalProject.BusinessLayer.Abstract;
@@ -26,6 +27,16 @@ namespace TraversalProject.BusinessLayer.Concrete
         public void TDelete(Feature t)
         {
             _featureDal.Delete(t);
+        }
+
+        public List<Feature> TGetByFilter(Expression<Func<Feature, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Feature TGetByFilter2(Expression<Func<Feature, bool>> filter)
+        {
+            throw new NotImplementedException();
         }
 
         public Feature TGetByID(int id)

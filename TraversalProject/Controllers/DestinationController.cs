@@ -28,5 +28,14 @@ namespace TraversalProject.WebUI.Controllers
             var destinationDtos = _mapper.Map<List<ListDestinationDto>>(values);
             return View(destinationDtos);
         }
+        public async Task<IActionResult> DestinationDetails(int id)
+        {
+            //ViewBag.i = id;
+            //ViewBag.destID = id;
+            //var value = await _userManager.FindByNameAsync(User.Identity.Name);
+            //ViewBag.userID = value.Id;
+            var values = _destinationService.TGetDestinationWithGuide(id);
+            return View(values);
+        }
     }
 }

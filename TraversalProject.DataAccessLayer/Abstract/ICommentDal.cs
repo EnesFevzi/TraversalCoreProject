@@ -9,5 +9,7 @@ namespace TraversalProject.DataAccessLayer.Abstract
 {
     public interface ICommentDal:IGenericDal<Comment>
     {
+        Task<List<Comment>> GetListCommentWithDestinationAsync();
+        Task<List<Comment>> GetListCommentWithDestinationAndUserAsync(int id);
     }
 }
