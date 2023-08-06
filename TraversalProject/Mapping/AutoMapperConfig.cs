@@ -4,6 +4,7 @@ using TraversalProject.DtoLayer.Dtos.DestinationDto;
 using TraversalProject.DtoLayer.Dtos.SubAutoDto;
 using TraversalProject.DtoLayer.Dtos.TestimonialDto;
 using TraversalProject.DtoLayer.Dtos.CommentDto;
+using TraversalProject.DtoLayer.Dtos.RegisterDto;
 
 namespace TraversalProject.WebUI.Mapping
 {
@@ -23,30 +24,33 @@ namespace TraversalProject.WebUI.Mapping
             CreateMap<ListCommentDto, Comment>().ReverseMap();
             CreateMap<Comment, ListCommentDto>().ReverseMap();
 
-            //CreateMap<UpdateServiceDto, Service>().ReverseMap();
-            //CreateMap<CreateServiceDto, Service>().ReverseMap();
+			CreateMap<CreateUserDto, AppUser>().ReverseMap();
+			CreateMap<AppUser, CreateUserDto>().ReverseMap();
+
+			//CreateMap<UpdateServiceDto, Service>().ReverseMap();
+			//CreateMap<CreateServiceDto, Service>().ReverseMap();
 
 
-            //CreateMap<ResultAboutDto, About>().ReverseMap();
-            //CreateMap<UpdateAboutDto, About>().ReverseMap();
+			//CreateMap<ResultAboutDto, About>().ReverseMap();
+			//CreateMap<UpdateAboutDto, About>().ReverseMap();
 
-            //CreateMap<ResultTestimonialDto, Testimonial>().ReverseMap();
+			//CreateMap<ResultTestimonialDto, Testimonial>().ReverseMap();
 
-            //CreateMap<ResultStaffDto, Staff>().ReverseMap();
+			//CreateMap<ResultStaffDto, Staff>().ReverseMap();
 
-            //CreateMap<CreateSubscribeDto, Subscribe>().ReverseMap();
-
-
-            //CreateMap<CreateBookingDto, Booking>().ReverseMap();
-
-            //CreateMap<ApprovedReservationDto, Booking>().ReverseMap();
+			//CreateMap<CreateSubscribeDto, Subscribe>().ReverseMap();
 
 
-            //CreateMap<CreateGuestDto, Guest>().ReverseMap();
-            //CreateMap<UpdateGuestDto, Guest>().ReverseMap();
+			//CreateMap<CreateBookingDto, Booking>().ReverseMap();
 
-            //CreateMap<CreateNewUserDto, AppUser>().ReverseMap();
-            //CreateMap<LoginUserDto, AppUser>().ReverseMap();
-        }
+			//CreateMap<ApprovedReservationDto, Booking>().ReverseMap();
+
+
+			//CreateMap<CreateGuestDto, Guest>().ReverseMap();
+			//CreateMap<UpdateGuestDto, Guest>().ReverseMap();
+
+			//CreateMap<CreateNewUserDto, AppUser>().ReverseMap();
+			//CreateMap<LoginUserDto, AppUser>().ReverseMap();
+		}
     }
 }
