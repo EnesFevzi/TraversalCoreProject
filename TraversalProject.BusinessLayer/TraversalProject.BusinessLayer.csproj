@@ -23,8 +23,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TraversalProject.CoreLayer\TraversalProject.CoreLayer.csproj" />
     <ProjectReference Include="..\TraversalProject.DataAccessLayer\TraversalProject.DataAccessLayer.csproj" />
     <ProjectReference Include="..\TraversalProject.EntityLayer\TraversalProject.EntityLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Abstract\AbstractUnıtOfWork\" />
+    <Folder Include="Concrete\ConcreteUnıtOfWork\" />
   </ItemGroup>
 
 </Project>

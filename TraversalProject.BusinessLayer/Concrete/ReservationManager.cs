@@ -18,7 +18,20 @@ namespace TraversalProject.BusinessLayer.Concrete
         {
             _reservationDal = reservationDal;
         }
+        public List<Reservation> GetListWithReservationByAccepted(int id)
+        {
+            return _reservationDal.GetListWithReservationByAccepted(id);
+        }
 
+        public List<Reservation> GetListWithReservationByPrevious(int id)
+        {
+            return _reservationDal.GetListWithReservationByPrevious(id);
+        }
+
+        public List<Reservation> GetListWithReservationByWaitAprroval(int id)
+        {
+            return _reservationDal.GetListWithReservationByWaitAprroval(id);
+        }
         public void TAdd(Reservation t)
         {
             _reservationDal.Add(t);

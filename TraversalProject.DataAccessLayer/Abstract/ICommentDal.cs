@@ -11,5 +11,6 @@ namespace TraversalProject.DataAccessLayer.Abstract
     {
         Task<List<Comment>> GetListCommentWithDestinationAsync();
         Task<List<Comment>> GetListCommentWithDestinationAndUserAsync(int id);
+
     }
 }

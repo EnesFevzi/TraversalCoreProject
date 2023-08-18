@@ -13,10 +13,7 @@ namespace TraversalProject.DataAccessLayer.Concrete
 {
     public class TContext : IdentityDbContext<AppUser, AppRole, int>
     {
-        public TContext()
-        {
 
-        }
         public TContext(DbContextOptions<TContext> options) : base(options)
         {
         }

@@ -12,5 +12,7 @@ namespace TraversalProject.BusinessLayer.Abstract
     {
         Task<List<Comment>> TGetListCommentWithDestinationAsync();
         Task<List<Comment>> TGetListCommentWithDestinationAndUserAsync(int id);
+
+
     }
 }

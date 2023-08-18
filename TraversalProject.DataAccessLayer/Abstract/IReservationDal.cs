@@ -7,7 +7,10 @@ using TraversalProject.EntityLayer.Concrete;
 
 namespace TraversalProject.DataAccessLayer.Abstract
 {
-    public interface IReservationDal:IGenericDal<Reservation>
+    public interface IReservationDal : IGenericDal<Reservation>
     {
+        List<Reservation> GetListWithReservationByAccepted(int id);
+        List<Reservation> GetListWithReservationByPrevious(int id);
+        List<Reservation> GetListWithReservationByWaitAprroval(int id);
     }
 }

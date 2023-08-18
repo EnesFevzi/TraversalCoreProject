@@ -63,5 +63,7 @@ namespace TraversalProject.BusinessLayer.Concrete
         {
             _commentDal.Update(t);
         }
+
+
     }
 }

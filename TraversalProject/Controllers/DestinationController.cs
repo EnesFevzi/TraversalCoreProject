@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TraversalProject.BusinessLayer.Abstract;
@@ -9,6 +10,7 @@ using TraversalProject.EntityLayer.Concrete;
 
 namespace TraversalProject.WebUI.Controllers
 {
+    [Authorize]
     public class DestinationController : Controller
     {
         private readonly IDestinationService _destinationService;
@@ -30,8 +32,8 @@ namespace TraversalProject.WebUI.Controllers
         }
         public async Task<IActionResult> DestinationDetails(int id)
         {
-            //ViewBag.i = id;
-            //ViewBag.destID = id;
+            ViewBag.i = id;
+            ViewBag.destID = id;
             //var value = await _userManager.FindByNameAsync(User.Identity.Name);
             //ViewBag.userID = value.Id;
             var values = _destinationService.TGetDestinationWithGuide(id);

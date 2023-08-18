@@ -9,7 +9,6 @@ namespace TraversalProject.EntityLayer.Concrete
     public class Reservation
     {
         public int ReservationID { get; set; }
-        
         public string? PersonCount { get; set; }
         public DateTime ReservastionDate { get; set; }
         public string? Description { get; set; }

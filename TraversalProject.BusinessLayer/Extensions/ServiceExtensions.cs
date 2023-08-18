@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TraversalProject.BusinessLayer.Abstract;
 using TraversalProject.BusinessLayer.Concrete;
+using TraversalProject.DataAccessLayer.UnıtOfWorks;
 
 namespace TraversalProject.BusinessLayer.Extensions
 {
@@ -15,6 +16,7 @@ namespace TraversalProject.BusinessLayer.Extensions
     {
         public static IServiceCollection LoadServiceLayerExtension(this IServiceCollection services)
         {
+
             services.AddScoped<IAboutService, AboutManager>();
             services.AddScoped<IAbout2Service, About2Manager>();
             services.AddScoped<IAccountService, AccountManager>();
@@ -30,6 +32,7 @@ namespace TraversalProject.BusinessLayer.Extensions
             services.AddScoped<IReservationService, ReservationManager>();
             services.AddScoped<ISubAboutService, SubAboutManager>();
             services.AddScoped<ITestimonialService, TestimonialManager>();
+            services.AddScoped<IUnıtOfWork, UnıtOfWork>();
 
             return services;
 

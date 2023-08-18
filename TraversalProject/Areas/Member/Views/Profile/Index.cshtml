@@ -1,0 +1,54 @@
+﻿@model UserEditViewDto
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Profil Bilgilerini Düzenle</h4>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleInputName1">Adınız</label>
+                    <input type="text" asp-for="Name" class="form-control" id="exampleInputName1" placeholder="Ad">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Soyadınız</label>
+                    <input type="text" asp-for="Surname" class="form-control" id="exampleInputName1" placeholder="Soyad">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Telefon Numarası</label>
+                    <input type="text" asp-for="phonenumber" class="form-control" id="exampleInputName1" placeholder="Telefon Numarası">
+                </div>
+                @*<div class="form-group">
+                <label for="exampleInputName1">Kullanıcı Adı</label>
+                <input type="text" asp-for="UserName" class="form-control" id="exampleInputName1" placeholder="Soyad">
+                </div>*@
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Şifreniz</label>
+                    <input type="password" asp-for="Password" class="form-control" id="exampleInputName1" placeholder="Şifreniz">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Şifre Tekrar</label>
+                    <input type="password" asp-for="ConfirmPassword" class="form-control" id="exampleInputName1" placeholder="Şifre Tekrar">
+                </div>
+                <div class="form-group">
+                    <label>Resim Seç</label>
+                    <input type="file" asp-for="Image">
+                    <div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Resim yükleyin">
+                        <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-primary" type="button">Yükle</button>
+                        </span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+                <button class="btn btn-light">İptal</button>
+            </form>
+        </div>
+    </div>
+</div>
+

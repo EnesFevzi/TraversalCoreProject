@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,26 @@ namespace TraversalProject.DataAccessLayer.Concrete.EntityFramework
     {
         public EfReservationDal(TContext context) : base(context)
         {
+        }
+        public List<Reservation> GetListWithReservationByAccepted(int id)
+        {
+
+                return _context.Reservations.Include(x => x.Destination).Where(x => x.Status == "Onaylandı" && x.AppUserId == id).ToList();
+
+        }
+
+        public List<Reservation> GetListWithReservationByPrevious(int id)
+        {
+
+                return _context.Reservations.Include(x => x.Destination).Where(x => x.Status == "Geçmiş Rezervasyon" && x.AppUserId == id).ToList();
+
+        }
+
+        public List<Reservation> GetListWithReservationByWaitAprroval(int id)
+        {
+
+                return _context.Reservations.Include(x => x.Destination).Where(x => x.Status == "Onay Bekliyor" && x.AppUserId == id).ToList();
+
         }
     }
 }

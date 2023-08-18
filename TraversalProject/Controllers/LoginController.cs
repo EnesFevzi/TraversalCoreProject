@@ -27,17 +27,23 @@ namespace TraversalProject.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(loginUserDto.Username, loginUserDto.Password, false, true);
+                var result = await _signInManager.PasswordSignInAsync(loginUserDto.Username, loginUserDto.Password, true, true);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Default");
+                    return RedirectToAction("Index", "Profile", new { area = "Member" });
                 }
                 else
                 {
-                    return View();
+                    ModelState.AddModelError("", "Hatalı kullanıcı adı veya şifre");
                 }
             }
             return View();
+        }
+
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Login");
         }
     }
 }
