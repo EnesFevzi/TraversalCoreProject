@@ -7,6 +7,8 @@ using TraversalProject.DtoLayer.Dtos.CommentDto;
 using TraversalProject.DtoLayer.Dtos.RegisterDto;
 using TraversalProject.DtoLayer.Dtos.UserDto;
 using TraversalProject.DtoLayer.Dtos.ReservationDto;
+using TraversalProject.DtoLayer.Dtos.GuideDto;
+using TraversalProject.DtoLayer.Dtos.AnnouncementDto;
 
 namespace TraversalProject.WebUI.Mapping
 {
@@ -15,31 +17,33 @@ namespace TraversalProject.WebUI.Mapping
         public AutoMapperConfig()
         {
             CreateMap<ListDestinationDto, Destination>().ReverseMap();
-            CreateMap<Destination, ListDestinationDto>().ReverseMap();
+
 
             CreateMap<ListSubAboutDto, SubAbout>().ReverseMap();
-            CreateMap<SubAbout, ListSubAboutDto>().ReverseMap();
+
 
             CreateMap<ListTestimonialDto, Testimonial>().ReverseMap();
-            CreateMap<Testimonial, ListTestimonialDto>().ReverseMap();
+
 
             CreateMap<ListCommentDto, Comment>().ReverseMap();
-            CreateMap<Comment, ListCommentDto>().ReverseMap();
+
 
 			CreateMap<CreateUserDto, AppUser>().ReverseMap();
-			CreateMap<AppUser, CreateUserDto>().ReverseMap();
+
 
             CreateMap<UserEditViewDto, AppUser>().ReverseMap();
-            CreateMap<AppUser, UserEditViewDto>().ReverseMap();
+
+            CreateMap<ListGuideDto, Guide>().ReverseMap();
 
             CreateMap<ListReservationDto, Reservation>().ReverseMap();
             CreateMap<AddReservationDto, Reservation>().ReverseMap();
 
 
 
+            CreateMap<AddAnnouncementDto, Announcement>().ReverseMap();
+            CreateMap<ListAnnouncementDto, Announcement>().ReverseMap();
+            CreateMap<UpdateAnnouncementDto, Announcement>().ReverseMap();
 
-            //CreateMap<UpdateServiceDto, Service>().ReverseMap();
-            //CreateMap<CreateServiceDto, Service>().ReverseMap();
 
 
             //CreateMap<ResultAboutDto, About>().ReverseMap();
