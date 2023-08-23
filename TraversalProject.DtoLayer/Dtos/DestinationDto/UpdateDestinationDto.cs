@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TraversalProject.EntityLayer.Concrete;
 
-namespace TraversalProject.EntityLayer.Concrete
+namespace TraversalProject.DtoLayer.Dtos.DestinationDto
 {
-    public class Destination
+    public class UpdateDestinationDto
     {
         public int DestinationID { get; set; }
         public string? City { get; set; }
@@ -23,7 +24,7 @@ namespace TraversalProject.EntityLayer.Concrete
         public DateTime Date { get; set; }
         public List<Comment> Comments { get; set; }
         public List<Reservation> Reservations { get; set; }
-        public int? GuideID { get; set; }
-        public Guide? Guide { get; set; }
+        public int GuideID { get; set; }
+        public Guide Guide { get; set; }
     }
 }

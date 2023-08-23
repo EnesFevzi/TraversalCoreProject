@@ -17,6 +17,8 @@ namespace TraversalProject.WebUI.Mapping
         public AutoMapperConfig()
         {
             CreateMap<ListDestinationDto, Destination>().ReverseMap();
+            CreateMap<AddDestinationDto, Destination>().ReverseMap();
+            CreateMap<UpdateDestinationDto, Destination>().ReverseMap();
 
 
             CreateMap<ListSubAboutDto, SubAbout>().ReverseMap();

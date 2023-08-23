@@ -9,6 +9,7 @@ namespace TraversalProject.WebUI.Areas.Admin.Controllers
     [Area("Admin")]
     public class AnnouncementController : Controller
     {
+      
         private readonly IAnnouncementService _announcementService;
         private readonly IMapper _mapper;
 
@@ -45,7 +46,7 @@ namespace TraversalProject.WebUI.Areas.Admin.Controllers
 
                 _announcementService.TAdd(newAnnouncement);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Announcement", new { area = "Admin" });
             }
 
             return View(model);
@@ -79,7 +80,7 @@ namespace TraversalProject.WebUI.Areas.Admin.Controllers
                 };
 
                 _announcementService.TUpdate(updatedAnnouncement);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Announcement", new { area = "Admin" });
             }
 
             return View(model);
