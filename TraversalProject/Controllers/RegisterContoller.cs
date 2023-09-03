@@ -8,6 +8,7 @@ using TraversalProject.EntityLayer.Concrete;
 namespace TraversalProject.WebUI.Controllers
 {
     [AllowAnonymous]
+
     public class RegisterController : Controller
     {
         private readonly UserManager<AppUser> _userManager;

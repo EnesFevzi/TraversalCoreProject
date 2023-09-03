@@ -9,6 +9,7 @@ using TraversalProject.DtoLayer.Dtos.UserDto;
 using TraversalProject.DtoLayer.Dtos.ReservationDto;
 using TraversalProject.DtoLayer.Dtos.GuideDto;
 using TraversalProject.DtoLayer.Dtos.AnnouncementDto;
+using TraversalProject.DtoLayer.Dtos.MessageDto;
 
 namespace TraversalProject.WebUI.Mapping
 {
@@ -36,6 +37,8 @@ namespace TraversalProject.WebUI.Mapping
             CreateMap<UserEditViewDto, AppUser>().ReverseMap();
 
             CreateMap<ListGuideDto, Guide>().ReverseMap();
+            CreateMap<AddGuideDto, Guide>().ReverseMap();
+            CreateMap<UpdateGuideDto, Guide>().ReverseMap();
 
             CreateMap<ListReservationDto, Reservation>().ReverseMap();
             CreateMap<AddReservationDto, Reservation>().ReverseMap();
@@ -46,6 +49,9 @@ namespace TraversalProject.WebUI.Mapping
             CreateMap<ListAnnouncementDto, Announcement>().ReverseMap();
             CreateMap<UpdateAnnouncementDto, Announcement>().ReverseMap();
 
+
+
+            CreateMap<SendMessageDto, ContactUs>().ReverseMap();
 
 
             //CreateMap<ResultAboutDto, About>().ReverseMap();

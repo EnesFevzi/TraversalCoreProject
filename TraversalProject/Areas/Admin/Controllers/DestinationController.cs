@@ -25,7 +25,7 @@ namespace TraversalProject.WebUI.Areas.Admin.Controllers
         public IActionResult Index()
         {
             var values = _destinationService.TGetList();
-            var listDestinationDto=_mapper.Map<List<ListDestinationDto>>(values);
+            var listDestinationDto = _mapper.Map<List<ListDestinationDto>>(values);
             return View(listDestinationDto);
         }
 
@@ -52,14 +52,21 @@ namespace TraversalProject.WebUI.Areas.Admin.Controllers
         public IActionResult UpdateDestination(int id)
         {
             var values = _destinationService.TGetByID(id);
-            return View(values);
+            var destinationDto = _mapper.Map<UpdateDestinationDto>(values);
+            return View(destinationDto);
         }
+
         [HttpPost]
         public IActionResult UpdateDestination(UpdateDestinationDto destinationDto)
         {
-            var destination = _mapper.Map<Destination>(destinationDto);
-            _destinationService.TUpdate(destination);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var destination = _mapper.Map<Destination>(destinationDto);
+                _destinationService.TUpdate(destination);
+                return RedirectToAction("Index");
+            }
+
+            return View(destinationDto); // Eğer ModelState geçerli değilse, hata mesajları ile birlikte View'i tekrar göster
         }
     }
 }

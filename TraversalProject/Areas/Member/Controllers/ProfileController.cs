@@ -23,6 +23,8 @@ namespace TraversalProject.WebUI.Areas.Member.Controllers
         public async Task<IActionResult> Index()
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            var roles = await _userManager.GetRolesAsync(values);
+            ViewBag.Roles = roles;
             var userEditViewModel = _mapper.Map<UserEditViewDto>(values);
             return View(userEditViewModel);
         }

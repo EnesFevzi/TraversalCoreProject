@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TraversalProject.BusinessLayer.Abstract;
 using TraversalProject.DtoLayer.Dtos.AnnouncementDto;
+using TraversalProject.DtoLayer.Dtos.DestinationDto;
 using TraversalProject.EntityLayer.Concrete;
 
 namespace TraversalProject.WebUI.Areas.Admin.Controllers
@@ -35,21 +36,10 @@ namespace TraversalProject.WebUI.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult AddAnnouncement(AddAnnouncementDto model)
         {
-            if (ModelState.IsValid)
-            {
-                var newAnnouncement = new Announcement
-                {
-                    Content = model.Content,
-                    Title = model.Title,
-                    Date = DateTime.Now
-                };
-
-                _announcementService.TAdd(newAnnouncement);
-
-                return RedirectToAction("Index", "Announcement", new { area = "Admin" });
-            }
-
-            return View(model);
+            model.Date = DateTime.Now;
+            var destination = _mapper.Map<Announcement>(model);
+            _announcementService.TAdd(destination);
+            return RedirectToAction("Index");
         }
 
         public IActionResult DeleteAnnouncement(int id)

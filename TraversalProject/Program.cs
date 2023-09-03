@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -18,8 +19,8 @@ var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddDbContext<TContext>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<TContext>().AddErrorDescriber<CustomIdentityValidator>().AddDefaultTokenProviders().AddTokenProvider<DataProtectorTokenProvider<AppUser>>(TokenOptions.DefaultProvider).AddEntityFrameworkStores<TContext>();
 
-//builder.Services.AddFluentValidationAutoValidation();
-//builder.Services.AddFluentValidationClientsideAdapters();
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddHttpClient();
 builder.Services.AddAuthorization();
 builder.Services.LoadDataLayerExtension(builder.Configuration);
@@ -27,6 +28,35 @@ builder.Services.LoadServiceLayerExtension();
 builder.Services.LoadWebUILayerExtension();
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
+
+
+builder.Services.AddMvc(config =>
+{
+    var policy = new AuthorizationPolicyBuilder()
+    .RequireAuthenticatedUser()
+    .Build();
+    config.Filters.Add(new AuthorizeFilter(policy));
+});
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.ExpireTimeSpan = TimeSpan.FromDays(1);
+    options.AccessDeniedPath = "/ErrorPage/Error404";
+    options.LoginPath = "/Login/Index/";
+    options.LogoutPath = "/Login/Logout";
+    options.SlidingExpiration = true;
+
+});
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Admin", policy =>
+    {
+        policy.RequireRole("Admin");
+    });
+});
+
 builder.Services.AddCustomAuthorization();
 
 var app = builder.Build();

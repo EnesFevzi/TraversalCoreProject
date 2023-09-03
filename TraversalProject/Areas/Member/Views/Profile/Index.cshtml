@@ -44,9 +44,12 @@
                         </span>
                     </div>
                 </div>
-
                 <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
                 <button class="btn btn-light">İptal</button>
+                @if (ViewBag.Roles.Contains("Admin"))
+                {
+                    <a href="@Url.Action("Index", "Dashboard", new { area = "Admin" })" class="btn btn-danger">Admin Paneline Geç</a>
+                }
             </form>
         </div>
     </div>

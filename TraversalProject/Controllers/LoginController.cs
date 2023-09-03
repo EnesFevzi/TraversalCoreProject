@@ -11,6 +11,7 @@ namespace TraversalProject.WebUI.Controllers
     public class LoginController : Controller
     {
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly UserManager<AppUser> _userManager;
         private readonly IMapper _mapper;
         public LoginController(SignInManager<AppUser> signInManager, IMapper mapper)
         {
@@ -25,6 +26,7 @@ namespace TraversalProject.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(LoginUserDto loginUserDto)
         {
+
             if (ModelState.IsValid)
             {
                 var result = await _signInManager.PasswordSignInAsync(loginUserDto.Username, loginUserDto.Password, true, true);
@@ -36,6 +38,8 @@ namespace TraversalProject.WebUI.Controllers
                 {
                     ModelState.AddModelError("", "Hatalı kullanıcı adı veya şifre");
                 }
+
+
             }
             return View();
         }

@@ -1,0 +1,40 @@
+﻿@model UpdateGuideDto
+@{
+    ViewData["Title"] = "EditGuide";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Rota Güncelleme Sayfası</h1>
+<form method="post">
+    <label>Şehir</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <br />
+    <label>Gün Gece</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <span asp-validation-for="Description" class="text-danger"></span>
+    <br />
+    <label>Ana Görsel</label>
+    <input type="text" asp-for="Image" class="form-control" />
+    <span asp-validation-for="Image" class="text-danger"></span>
+    <br />
+    <label>Fiyat</label>
+    <input type="text" asp-for="TwitterUrl" class="form-control" />
+    <span asp-validation-for="TwitterUrl" class="text-danger"></span>
+    <br />
+
+    <label>Kapasite</label>
+    <input type="text" asp-for="Description2" class="form-control" />
+    <span asp-validation-for="Description2" class="text-danger"></span>
+    <br />
+    <label>Kapak Görseli</label>
+    <input type="text" asp-for="GuideListImage" class="form-control" />
+    <span asp-validation-for="GuideListImage" class="text-danger"></span>
+    <br />
+    <label>Görsel 2</label>
+    <input type="text" asp-for="InstagramUrl" class="form-control" />
+    <span asp-validation-for="InstagramUrl" class="text-danger"></span>
+    <br />
+    <button class="btn btn-outline-primary">Duyuruyu Oluştur</button>
+</form>
+
