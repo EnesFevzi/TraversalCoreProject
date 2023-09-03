@@ -1,4 +1,4 @@
-﻿@model List<RoleAssignViewModel>
+﻿@model List<RoleAssignDto>
 @{
     ViewData["Title"] = "AssignRole";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -9,7 +9,7 @@
         @for (int i = 0; i < Model.Count; i++)
         {
 
-            <input type="hidden" asp-for="@Model[i].RoleId">
+            <input type="hidden" asp-for="@Model[i].RoleID">
             <input type="hidden" asp-for="@Model[i].RoleName">
             <div class="form-group row">
                 <div class="col-lg-offset-2 col-lg-5">

@@ -1,8 +1,8 @@
 ﻿namespace TraversalProject.WebUI.Models
 {
-    public class RoleAssignViewModel
+    public class RoleAssignDto
     {
-        public int RoleId { get; set; }
+        public int RoleID { get; set; }
         public string RoleName { get; set; }
         public bool RoleExist { get; set; }
     }

@@ -77,33 +77,40 @@ namespace TraversalProject.WebUI.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> AssignRole(string id)
+        public async Task<IActionResult> AssignRole(int id)
         {
-            AppUser user = await _userManager.FindByIdAsync(id);
-            List<AppRole> allRoles = _roleManager.Roles.ToList();
-            List<string> userRoles = await _userManager.GetRolesAsync(user) as List<string>;
-            List<RoleAssignViewModel> assignRoles = new List<RoleAssignViewModel>();
-            allRoles.ForEach(role => assignRoles.Add(new RoleAssignViewModel
+            var user = _userManager.Users.FirstOrDefault(x => x.Id == id);
+            TempData["userid"] = user.Id;
+            var roles = _roleManager.Roles.ToList();
+            var userRoles = await _userManager.GetRolesAsync(user);
+            List<RoleAssignDto> roleAssignViewModels = new List<RoleAssignDto>();
+            foreach (var item in roles)
             {
-                RoleExist = userRoles.Contains(role.Name),
-                RoleId = role.Id,
-                RoleName = role.Name
-            }));
-
-            return View(assignRoles);
+                RoleAssignDto model = new RoleAssignDto();
+                model.RoleID = item.Id;
+                model.RoleName = item.Name;
+                model.RoleExist = userRoles.Contains(item.Name);
+                roleAssignViewModels.Add(model);
+            }
+            return View(roleAssignViewModels);
         }
         [HttpPost]
-        public async Task<ActionResult> AssignRole(List<RoleAssignViewModel> modelList, string id)
+        public async Task<IActionResult> AssignRole(List<RoleAssignDto> roleAssignViewModel)
         {
-            AppUser user = await _userManager.FindByIdAsync(id);
-            foreach (RoleAssignViewModel role in modelList)
+            var userid = (int)TempData["userid"];
+            var user = _userManager.Users.FirstOrDefault(x => x.Id == userid);
+            foreach (var item in roleAssignViewModel)
             {
-                if (role.RoleExist)
-                    await _userManager.AddToRoleAsync(user, role.RoleName);
+                if (item.RoleExist)
+                {
+                    await _userManager.AddToRoleAsync(user, item.RoleName);
+                }
                 else
-                    await _userManager.RemoveFromRoleAsync(user, role.RoleName);
+                {
+                    await _userManager.RemoveFromRoleAsync(user, item.RoleName);
+                }
             }
-            return RedirectToAction("UserRoleList");
+            return RedirectToAction("Index");
         }
     }
 }
