@@ -11,11 +11,8 @@ Bu proje, tatil rezervasyonu alanında faaliyet gösteren bir web sitesini temsi
 - Entity Framework Core
 - HTML, CSS, Bootstrap
 - SQL Server
-- RapidAPI ve ApiConsume (API entegrasyonu için kullanıldı)
 - DTOLayer
 - EntityLayer
-- SignalRApiForSQL
-- SignalRConsume
 
 ## Kurulum ve Çalıştırma
 
@@ -67,3 +64,14 @@ Login ve Register sayfaları oluşturuldu.
 
 Kullanıcıların giriş yapabileceği Login ve yeni hesap oluşturabileceği Register sayfaları oluşturuldu.
 Kullanıcı kimlik doğrulama işlemleri gerçekleştirildi.
+
+![8](https://github.com/EnesFevzi/TraversalCoreProject/assets/118919666/bfabafdd-4039-4039-b351-239336ef67f0)
+![7](https://github.com/EnesFevzi/TraversalCoreProject/assets/118919666/7d951a43-dbb9-46bc-add6-a44e5cb581b7)
+![6](https://github.com/EnesFevzi/TraversalCoreProject/assets/118919666/8dee0369-3a06-4bbf-8a89-cdfb0d059ec3)
+![5](https://github.com/EnesFevzi/TraversalCoreProject/assets/118919666/ef101fa7-c3b0-4796-a0ac-bfc5a979f528)
+![4](https://github.com/EnesFevzi/TraversalCoreProject/assets/118919666/b2f650dc-a034-47e8-8adf-29df5f5cd71f)
+![1](https://github.com/EnesFevzi/TraversalCoreProject/assets/118919666/2d94c98a-e1d4-4a58-a183-ecf10a397563)
+![2](https://github.com/EnesFevzi/TraversalCoreProject/assets/118919666/a64af02c-d862-488f-92c3-cb061bc03e8e)
+![3](https://github.com/EnesFevzi/TraversalCoreProject/assets/118919666/b3a9abde-400e-4bc0-acb8-1636e8b8f4fd)
+
+
