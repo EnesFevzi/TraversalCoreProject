@@ -10,7 +10,7 @@ using TraversalProject.EntityLayer.Concrete;
 
 namespace TraversalProject.WebUI.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     public class DestinationController : Controller
     {
         private readonly IDestinationService _destinationService;

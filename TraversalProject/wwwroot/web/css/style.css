@@ -223,7 +223,7 @@ button:hover {
   width: 70%;
   float: left;
   text-align: center;
-  background: url(../images/banner1.jpg) no-repeat center;
+  background: url(../images/banner.jpg) no-repeat center;
   background-size: cover;
   box-sizing: border-box;
   min-height: 100%;
