@@ -9,10 +9,9 @@ Bu proje, tatil rezervasyonu alanında faaliyet gösteren bir web sitesini temsi
 
 - ASP.NET Core 6.0
 - Entity Framework Core
-- HTML, CSS, Bootstrap
+- MVC 
 - SQL Server
-- DTOLayer
-- EntityLayer
+- Mapper
 
 ## Kurulum ve Çalıştırma
 
